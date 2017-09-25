@@ -1,0 +1,13 @@
+--ignore-file=match:swp
+--ignore-file=match:swo
+--ignore-file=match:swn
+--ignore-file=match:asm
+--ignore-file=match:sym
+--ignore-file=match:tags
+--ignore-file=match:blockly-all.js
+--ignore-file=match:.gitignore
+--ignore-dir=.git
+--ignore-dir=appengine/build/war
+--ignore-dir=Threes-HTML
+--ignore-dir=dist
+--ignore-dir=.cabal-sandbox
