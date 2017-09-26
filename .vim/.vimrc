@@ -18,6 +18,7 @@ filetype off                  " required
 
 set rtp+=~/.vim/bundle/vundle
 set rtp+=~/.fzf
+set rtp+=~/.vim/bundle/vim-colors-solarized
 call vundle#begin()
 Plugin 'gmarik/vundle'
 " Plugin 'Syntastic'
@@ -33,7 +34,7 @@ Plugin 'https://github.com/kana/vim-textobj-entire'
 Plugin 'https://github.com/glts/vim-textobj-comment'
 Plugin 'https://github.com/wellle/targets.vim'
 Plugin 'https://github.com/tommcdo/vim-lion'
-Plugin 'https://github.com/coderifous/textobj-word-column.vim'
+Plugin 'https://github.com/altercation/vim-colors-solarized'
 
 call vundle#end()
 
@@ -57,8 +58,13 @@ colorscheme ron
 set nu
 set rnu
 
-" Set syntax on
-syntax on
+
+syntax enable
+let g:solarized_termtrans = 1
+let g:solarized_bold = 1
+let g:solarized_termcolors = 256
+set background=dark
+colorscheme solarized
 
 function! EraseTrailingWhiteSpace()
   if search('\s\+$', 'nw') != 0
@@ -139,3 +145,7 @@ command! -nargs=0 Build :w | !python main.py
 nnoremap ; :
 
 nnoremap <C-p> :FZF<CR>
+let g:go_doc_keywordprg_enabled = 0
+
+" from old vimrc
+set cryptmethod=blowfish
