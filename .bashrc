@@ -16,3 +16,4 @@ source ~/.marksrc
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
 source ~/.customization/secrets
+export GOPATH=/Users/ethomas/go_home

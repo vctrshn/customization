@@ -119,6 +119,11 @@ set wrap "Wrap lines
 filetype indent on
 set laststatus=2
 
+" default backpace behavior in vim is dumb
+" https://vi.stackexchange.com/questions/2162/why-doesnt-the-backspace-key-work-in-insert-mode
+set backspace=indent,eol,start
+
+
 "test functions
 noremap mm =
 nnoremap <silent> <Leader>n  :set rnu!<CR>
@@ -146,6 +151,9 @@ nnoremap ; :
 
 nnoremap <C-p> :FZF<CR>
 let g:go_doc_keywordprg_enabled = 0
+let g:go_def_mapping_enabled = 0
+let g:go_list_type = "quickfix"
+let g:go_def_mode = 'godef'
 
 " from old vimrc
 set cryptmethod=blowfish
