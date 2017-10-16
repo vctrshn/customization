@@ -15,6 +15,7 @@ xnoremap v <esc>
 
 " make o concatenate lines (just because I don't have a better letter for it)
 xnoremap o J
+xnoremap <C-o> o
 
 " Set jk to be escape in insert mode
 inoremap jk <esc>

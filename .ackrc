@@ -11,3 +11,4 @@
 --ignore-dir=Threes-HTML
 --ignore-dir=dist
 --ignore-dir=.cabal-sandbox
+--ignore-dir=vendor

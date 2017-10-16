@@ -35,6 +35,7 @@ Plugin 'https://github.com/glts/vim-textobj-comment'
 Plugin 'https://github.com/wellle/targets.vim'
 Plugin 'https://github.com/tommcdo/vim-lion'
 Plugin 'https://github.com/altercation/vim-colors-solarized'
+Plugin 'https://github.com/coderifous/textobj-word-column.vim'
 
 call vundle#end()
 
@@ -94,6 +95,11 @@ augroup mygroup
   "if you change vimrc, resource it
   autocmd BufWritePost  .vimrc  source %
   autocmd BufWritePost */plugin/mystuff/*.vim source %
+
+  au FileType haskell nnoremap <silent> <buffer> <Leader>ht :HdevtoolsType<CR>
+  au FileType haskell nnoremap <silent> <buffer> <Leader>hc :HdevtoolsClear<CR>
+  au FileType haskell nnoremap <silent> <buffer> <Leader>hi :HdevtoolsInfo<CR>
+  au BufWritePre *go GoImports
 augroup END
 
 
@@ -127,18 +133,21 @@ set backspace=indent,eol,start
 "test functions
 noremap mm =
 nnoremap <silent> <Leader>n  :set rnu!<CR>
-au FileType haskell nnoremap <silent> <buffer> <Leader>ht :HdevtoolsType<CR>
-au FileType haskell nnoremap <silent> <buffer> <Leader>hc :HdevtoolsClear<CR>
-au FileType haskell nnoremap <silent> <buffer> <Leader>hi :HdevtoolsInfo<CR>
-" nnoremap <silent> <leader>sr :SyntasticReset<CR>
 set splitright
 nnoremap n /<CR>
 nnoremap N ?<CR>
-xnoremap <leader>a :norm! @1<CR>
 "let g:syntastic_python_python_exec = 'python3'
 
 
 command! -nargs=0 Fold :set foldmethod=indent
+
+let g:textobj_comment_no_default_key_mappings = 1
+xmap agc <Plug>(textobj-comment-a)
+omap agc <Plug>(textobj-comment-a)
+xmap igc <Plug>(textobj-comment-i)
+omap igc <Plug>(textobj-comment-i)
+
+
 xmap cm  <Plug>Commentary
 nmap cm  <Plug>Commentary
 omap cm  <Plug>Commentary
