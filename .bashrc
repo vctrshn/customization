@@ -7,6 +7,7 @@ if [ -f ~/.customization/git-completion.bash ]; then
 fi
 
 PATH="${PATH}:/Users/ethomas/scripts:/Users/ethomas/bin"
+PATH="${PATH}:/Users/ethomas/scripts/cancel-cr-build"
 export PATH
 
 #adds mark jump command to terminal

@@ -12,3 +12,5 @@
 --ignore-dir=dist
 --ignore-dir=.cabal-sandbox
 --ignore-dir=vendor
+--ignore-dir=venv
+--ignore-dir=assets

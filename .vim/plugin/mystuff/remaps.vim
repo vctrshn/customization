@@ -41,6 +41,5 @@ noremap <Leader>a @q
 "nmap <Leader>s :exec("ts ".expand("<cword>"))<CR>
 "nmap <Leader>] <C-]>
 
-ca path echo expand('%:p')<CR>
 ca genCtags !ctags `find .`<CR>
 ca csh  ConqueTerm bash <CR>
