@@ -1,3 +1,7 @@
-secrets
 .vim/bundle
 .vim/.netrwhist
+*secret*
+*venv
+*config*
+*conf*
+

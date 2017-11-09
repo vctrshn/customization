@@ -1,0 +1,4 @@
+#!/bin/bash
+source  ~/ClusterRunner/venv/bin/activate
+# python ~/ClusterRunner/main.py build --master-url "cluster-master.pod.box.net:43000" git  --job-name Large --url ssh://gitosis@dev-scm-ro.dev.box.net/productivity-ci-workflow-test
+python ~/ClusterRunner/main.py build --master-url "https://clusterrunner01.pod.box.net:43000" git  --job-name Single_Slave_20_minutes --url ssh://gitosis@dev-scm-ro.dev.box.net/productivity-ci-workflow-test
