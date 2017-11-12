@@ -100,6 +100,10 @@ augroup mygroup
   au FileType haskell nnoremap <silent> <buffer> <Leader>hc :HdevtoolsClear<CR>
   au FileType haskell nnoremap <silent> <buffer> <Leader>hi :HdevtoolsInfo<CR>
   au BufWritePre *go GoImports
+
+  " Not working. Idk why. See
+  " https://vi.stackexchange.com/questions/5201/how-do-i-tell-vim-that-some-file-extensions-are-synonymous
+  au BufRead,BufNewFile Dockerfile* setfiletype dockerfile
 augroup END
 
 

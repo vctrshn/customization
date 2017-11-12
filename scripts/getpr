@@ -1,0 +1,8 @@
+#!/bin/bash
+
+repo=$1
+number=$2
+
+curl -s -L -H "Accept: application/vnd.github.v3+json" -H "Authorization: Token $GHTOKEN"  https://git.dev.box.net/api/v3/repos/$repo/pulls/$number
+echo
+
