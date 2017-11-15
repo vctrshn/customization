@@ -2,6 +2,6 @@
 .vim/.netrwhist
 *secret*
 *venv
-*config*
-*conf*
+*.config
+*.conf
 
