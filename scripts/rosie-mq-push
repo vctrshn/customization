@@ -1,2 +1,3 @@
 #!/bin/bash
-git push origin HEAD:refs/merge-queue/$(git rev-parse HEAD)
+remote=$(git remote | head -1)
+git push $remote HEAD:refs/merge-queue/$(git rev-parse HEAD)

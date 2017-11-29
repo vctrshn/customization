@@ -1,0 +1,3 @@
+#!/bin/bash
+repo=$1
+curl -s -L -H "Accept: application/vnd.github.v3+json" -H "Authorization: Token $GHTOKEN" https://git.dev.box.net/api/v3/repos/$repo/fusion-ed3391e7a7f677-TestFusionMergesSecondPRInQueueIfFirstFails/events

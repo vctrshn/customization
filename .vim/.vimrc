@@ -170,3 +170,5 @@ let g:go_def_mode = 'godef'
 
 " from old vimrc
 set cryptmethod=blowfish
+
+set ruler
