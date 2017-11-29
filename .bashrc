@@ -23,3 +23,7 @@ source ~/.customization/secrets
 alias nose='nosetests -v -x -s'
 export PYTHONPATH=$PYTHONPATH:/Users/ethomas/werk
 alias dwerk='/Users/ethomas/werk/venv/bin/python /Users/ethomas/werk/werk/main.py'
+
+if [ -z "$TMUX" ]; then
+  tmux
+fi
