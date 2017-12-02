@@ -1,0 +1,14 @@
+#!/bin/bash
+sha=$1
+state=$2
+context=${3:-Context}
+repo_full_name=$(git remote get-url origin | awk -F: '{print $2}' | sed "s/.git//")
+
+curl -s -L -X POST -H "Accept: application/vnd.github.v3+json" -H "Authorization: Token $GHTOKEN" --data "{
+\"state\": \"$state\",
+\"description\": \"some description\",
+\"context\": \"$context\"
+}" https://git.dev.box.net/api/v3/repos/$repo_full_name/statuses/$sha
+
+
+
