@@ -1,3 +1,4 @@
 #!/bin/bash
-repo=$1
-curl -s -L -H "Accept: application/vnd.github.v3+json" -H "Authorization: Token $GHTOKEN" https://git.dev.box.net/api/v3/repos/$repo/fusion-ed3391e7a7f677-TestFusionMergesSecondPRInQueueIfFirstFails/events
+current_repo=$(git remote get-url origin | awk -F: '{print $2}' | sed "s/.git//")
+repo=${1:-$current_repo}
+curl -s -L -H "Accept: application/vnd.github.v3+json" -H "Authorization: Token $GHTOKEN" https://git.dev.box.net/api/v3/repos/$repo/events
