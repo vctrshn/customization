@@ -9,6 +9,7 @@ fi
 PATH="${PATH}:/Users/ethomas/scripts:/Users/ethomas/bin"
 PATH="${PATH}:/Users/ethomas/scripts/cancel-cr-build"
 PATH="${PATH}:/Users/ethomas/go/bin"
+PATH="${PATH}:/Users/ethomas/.local/bin"
 export PATH
 
 #adds mark jump command to terminal

@@ -24,7 +24,7 @@ Plugin 'gmarik/vundle'
 " Plugin 'Syntastic'
 " Plugin 'ctrlp.vim'
 Plugin 'fatih/vim-go'
-Plugin 'bitc/vim-hdevtools'
+" Plugin 'bitc/vim-hdevtools'
 Plugin 'tpope/vim-surround'
 
 Plugin 'https://github.com/tpope/vim-commentary'
