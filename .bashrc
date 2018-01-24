@@ -10,7 +10,11 @@ PATH="${PATH}:/Users/ethomas/scripts:/Users/ethomas/bin"
 PATH="${PATH}:/Users/ethomas/scripts/cancel-cr-build"
 PATH="${PATH}:/Users/ethomas/go/bin"
 PATH="${PATH}:/Users/ethomas/.local/bin"
+PATH="${PATH}:/Users/ethomas/.local/bin"
 export PATH
+
+alias lifx='/Users/ethomas/.customization/scripts/lifx-cmd/venv/bin/python /Users/ethomas/.customization/scripts/lifx-cmd/bin/lifx'
+alias lifx-discover='/Users/ethomas/.customization/scripts/lifx-cmd/venv/bin/python /Users/ethomas/.customization/scripts/lifx-cmd/bin/lifx-discover'
 
 #adds mark jump command to terminal
 source ~/.marksrc

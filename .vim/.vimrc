@@ -20,22 +20,29 @@ set rtp+=~/.vim/bundle/vundle
 set rtp+=~/.fzf
 set rtp+=~/.vim/bundle/vim-colors-solarized
 call vundle#begin()
-Plugin 'gmarik/vundle'
-" Plugin 'Syntastic'
-" Plugin 'ctrlp.vim'
-Plugin 'fatih/vim-go'
-" Plugin 'bitc/vim-hdevtools'
-Plugin 'tpope/vim-surround'
 
+"Other
+Plugin 'gmarik/vundle'
+Plugin 'https://github.com/altercation/vim-colors-solarized'
+
+"Language IDE-like stuff
+Plugin 'fatih/vim-go'
+Plugin 'bitc/vim-hdevtools'
+Plugin 'https://github.com/dan-t/vim-hsimport'
+
+" Verbs
+Plugin 'tpope/vim-surround'
 Plugin 'https://github.com/tpope/vim-commentary'
+Plugin 'https://github.com/tommcdo/vim-lion'
+
+" Text objects
+Plugin 'https://github.com/kana/vim-textobj-entire'
 Plugin 'https://github.com/michaeljsmith/vim-indent-object'
 Plugin 'https://github.com/kana/vim-textobj-user'
-Plugin 'https://github.com/kana/vim-textobj-entire'
 Plugin 'https://github.com/glts/vim-textobj-comment'
 Plugin 'https://github.com/wellle/targets.vim'
-Plugin 'https://github.com/tommcdo/vim-lion'
-Plugin 'https://github.com/altercation/vim-colors-solarized'
 Plugin 'https://github.com/coderifous/textobj-word-column.vim'
+
 
 call vundle#end()
 
