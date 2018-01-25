@@ -1,0 +1,1014 @@
+let SessionLoad = 1
+if &cp | set nocp | endif
+let s:cpo_save=&cpo
+set cpo&vim
+map! <D-v> *
+nnoremap <silent> j :exe 'rightbelow new '.expand('%p')
+nnoremap <silent> k :exe 'leftabove  new '.expand('%p')
+nnoremap <silent> l :exe 'rightbelow vnew '.expand('%p')
+nnoremap <silent> h :exe 'leftabove  vnew '.expand('%p')
+nnoremap <silent>  :wincmd h
+noremap 	 gt
+nnoremap <silent> <NL> :wincmd j
+nnoremap <silent>  :wincmd k
+nnoremap <silent>  :wincmd l
+vnoremap  o
+nnoremap  :FZF
+noremap  :tabnew
+nnoremap e T
+nnoremap <silent> j :exe 'botright new '.expand('%:p')
+nnoremap <silent> k :exe 'topleft  new '.expand('%:p')
+nnoremap <silent> l :exe 'botright vnew '.expand('%:p')
+nnoremap <silent> h :exe 'topleft  vnew '.expand('%:p')
+nnoremap  o :buffers:buffer 
+nmap  ] 
+nmap  s :exec("ts ".expand("<cword>"))
+nmap  h :sp :exec("tag ".expand("<cword>"))
+map  j :rightb vsp :exec("tag ".expand("<cword>"))
+noremap  l ^@qj^
+nnoremap  p :call ClipboardPaste()
+xnoremap  c :call ClipboardCopy()
+xnoremap  y :call ClipboardCopy()
+noremap  a @q
+nnoremap <silent>  n :set rnu!
+omap <silent> , <Plug>fanfingtastic_,
+xmap <silent> , <Plug>fanfingtastic_,
+nmap <silent> , <Plug>fanfingtastic_,
+nnoremap : ;
+omap <silent> ; <Plug>fanfingtastic_;
+vnoremap ; :
+nnoremap ; :
+xnoremap <silent> <expr> A targets#e('A')
+onoremap <silent> Ala :call targets#o('alA', v:count1)
+onoremap <silent> Ana :call targets#o('anA', v:count1)
+onoremap <silent> Aa :call targets#o('acA', v:count1)
+onoremap <silent> AL$ :call targets#o('$LA', v:count1)
+onoremap <silent> AN$ :call targets#o('$NA', v:count1)
+onoremap <silent> Al$ :call targets#o('$lA', v:count1)
+onoremap <silent> An$ :call targets#o('$nA', v:count1)
+onoremap <silent> A$ :call targets#o('$cA', v:count1)
+onoremap <silent> AL& :call targets#o('&LA', v:count1)
+onoremap <silent> AN& :call targets#o('&NA', v:count1)
+onoremap <silent> Al& :call targets#o('&lA', v:count1)
+onoremap <silent> An& :call targets#o('&nA', v:count1)
+onoremap <silent> A& :call targets#o('&cA', v:count1)
+onoremap <silent> AL| :call targets#o('|LA', v:count1)
+onoremap <silent> AN| :call targets#o('|NA', v:count1)
+onoremap <silent> Al| :call targets#o('|lA', v:count1)
+onoremap <silent> An| :call targets#o('|nA', v:count1)
+onoremap <silent> A| :call targets#o('|cA', v:count1)
+onoremap <silent> AL\ :call targets#o('\LA', v:count1)
+onoremap <silent> AN\ :call targets#o('\NA', v:count1)
+onoremap <silent> Al\ :call targets#o('\lA', v:count1)
+onoremap <silent> An\ :call targets#o('\nA', v:count1)
+onoremap <silent> A\ :call targets#o('\cA', v:count1)
+onoremap <silent> AL/ :call targets#o('/LA', v:count1)
+onoremap <silent> AN/ :call targets#o('/NA', v:count1)
+onoremap <silent> Al/ :call targets#o('/lA', v:count1)
+onoremap <silent> An/ :call targets#o('/nA', v:count1)
+onoremap <silent> A/ :call targets#o('/cA', v:count1)
+onoremap <silent> AL# :call targets#o('#LA', v:count1)
+onoremap <silent> AN# :call targets#o('#NA', v:count1)
+onoremap <silent> Al# :call targets#o('#lA', v:count1)
+onoremap <silent> An# :call targets#o('#nA', v:count1)
+onoremap <silent> A# :call targets#o('#cA', v:count1)
+onoremap <silent> AL* :call targets#o('*LA', v:count1)
+onoremap <silent> AN* :call targets#o('*NA', v:count1)
+onoremap <silent> Al* :call targets#o('*lA', v:count1)
+onoremap <silent> An* :call targets#o('*nA', v:count1)
+onoremap <silent> A* :call targets#o('*cA', v:count1)
+onoremap <silent> AL_ :call targets#o('_LA', v:count1)
+onoremap <silent> AN_ :call targets#o('_NA', v:count1)
+onoremap <silent> Al_ :call targets#o('_lA', v:count1)
+onoremap <silent> An_ :call targets#o('_nA', v:count1)
+onoremap <silent> A_ :call targets#o('_cA', v:count1)
+onoremap <silent> AL~ :call targets#o('~LA', v:count1)
+onoremap <silent> AN~ :call targets#o('~NA', v:count1)
+onoremap <silent> Al~ :call targets#o('~lA', v:count1)
+onoremap <silent> An~ :call targets#o('~nA', v:count1)
+onoremap <silent> A~ :call targets#o('~cA', v:count1)
+onoremap <silent> AL= :call targets#o('=LA', v:count1)
+onoremap <silent> AN= :call targets#o('=NA', v:count1)
+onoremap <silent> Al= :call targets#o('=lA', v:count1)
+onoremap <silent> An= :call targets#o('=nA', v:count1)
+onoremap <silent> A= :call targets#o('=cA', v:count1)
+onoremap <silent> AL- :call targets#o('-LA', v:count1)
+onoremap <silent> AN- :call targets#o('-NA', v:count1)
+onoremap <silent> Al- :call targets#o('-lA', v:count1)
+onoremap <silent> An- :call targets#o('-nA', v:count1)
+onoremap <silent> A- :call targets#o('-cA', v:count1)
+onoremap <silent> AL+ :call targets#o('+LA', v:count1)
+onoremap <silent> AN+ :call targets#o('+NA', v:count1)
+onoremap <silent> Al+ :call targets#o('+lA', v:count1)
+onoremap <silent> An+ :call targets#o('+nA', v:count1)
+onoremap <silent> A+ :call targets#o('+cA', v:count1)
+onoremap <silent> AL: :call targets#o(':LA', v:count1)
+onoremap <silent> AN: :call targets#o(':NA', v:count1)
+onoremap <silent> Al: :call targets#o(':lA', v:count1)
+onoremap <silent> An: :call targets#o(':nA', v:count1)
+onoremap <silent> A: :call targets#o(':cA', v:count1)
+onoremap <silent> AL; :call targets#o(';LA', v:count1)
+onoremap <silent> AN; :call targets#o(';NA', v:count1)
+onoremap <silent> Al; :call targets#o(';lA', v:count1)
+onoremap <silent> An; :call targets#o(';nA', v:count1)
+onoremap <silent> A; :call targets#o(';cA', v:count1)
+onoremap <silent> AL. :call targets#o('.LA', v:count1)
+onoremap <silent> AN. :call targets#o('.NA', v:count1)
+onoremap <silent> Al. :call targets#o('.lA', v:count1)
+onoremap <silent> An. :call targets#o('.nA', v:count1)
+onoremap <silent> A. :call targets#o('.cA', v:count1)
+onoremap <silent> AL, :call targets#o(',LA', v:count1)
+onoremap <silent> AN, :call targets#o(',NA', v:count1)
+onoremap <silent> Al, :call targets#o(',lA', v:count1)
+onoremap <silent> An, :call targets#o(',nA', v:count1)
+onoremap <silent> A, :call targets#o(',cA', v:count1)
+onoremap <silent> AL` :call targets#o('`LA', v:count1)
+onoremap <silent> AN` :call targets#o('`NA', v:count1)
+onoremap <silent> Al` :call targets#o('`lA', v:count1)
+onoremap <silent> An` :call targets#o('`nA', v:count1)
+onoremap <silent> A` :call targets#o('`cA', v:count1)
+onoremap <silent> AL' :call targets#o('''LA', v:count1)
+onoremap <silent> AN' :call targets#o('''NA', v:count1)
+onoremap <silent> Al' :call targets#o('''lA', v:count1)
+onoremap <silent> An' :call targets#o('''nA', v:count1)
+onoremap <silent> A' :call targets#o('''cA', v:count1)
+onoremap <silent> AL" :call targets#o('"LA', v:count1)
+onoremap <silent> AN" :call targets#o('"NA', v:count1)
+onoremap <silent> Al" :call targets#o('"lA', v:count1)
+onoremap <silent> An" :call targets#o('"nA', v:count1)
+onoremap <silent> A" :call targets#o('"cA', v:count1)
+onoremap <silent> Alt :call targets#o('tlA', v:count1)
+onoremap <silent> Ant :call targets#o('tnA', v:count1)
+onoremap <silent> At :call targets#o('tcA', v:count1)
+onoremap <silent> Al> :call targets#o('>lA', v:count1)
+onoremap <silent> An> :call targets#o('>nA', v:count1)
+onoremap <silent> A> :call targets#o('>cA', v:count1)
+onoremap <silent> Al< :call targets#o('<lA', v:count1)
+onoremap <silent> An< :call targets#o('<nA', v:count1)
+onoremap <silent> A< :call targets#o('<cA', v:count1)
+onoremap <silent> Al] :call targets#o(']lA', v:count1)
+onoremap <silent> An] :call targets#o(']nA', v:count1)
+onoremap <silent> A] :call targets#o(']cA', v:count1)
+onoremap <silent> Al[ :call targets#o('[lA', v:count1)
+onoremap <silent> An[ :call targets#o('[nA', v:count1)
+onoremap <silent> A[ :call targets#o('[cA', v:count1)
+onoremap <silent> AlB :call targets#o('BlA', v:count1)
+onoremap <silent> AnB :call targets#o('BnA', v:count1)
+onoremap <silent> AB :call targets#o('BcA', v:count1)
+onoremap <silent> Al} :call targets#o('}lA', v:count1)
+onoremap <silent> An} :call targets#o('}nA', v:count1)
+onoremap <silent> A} :call targets#o('}cA', v:count1)
+onoremap <silent> Al{ :call targets#o('{lA', v:count1)
+onoremap <silent> An{ :call targets#o('{nA', v:count1)
+onoremap <silent> A{ :call targets#o('{cA', v:count1)
+onoremap <silent> Alb :call targets#o('blA', v:count1)
+onoremap <silent> Anb :call targets#o('bnA', v:count1)
+onoremap <silent> Ab :call targets#o('bcA', v:count1)
+onoremap <silent> Al) :call targets#o(')lA', v:count1)
+onoremap <silent> An) :call targets#o(')nA', v:count1)
+onoremap <silent> A) :call targets#o(')cA', v:count1)
+onoremap <silent> Al( :call targets#o('(lA', v:count1)
+onoremap <silent> An( :call targets#o('(nA', v:count1)
+onoremap <silent> A( :call targets#o('(cA', v:count1)
+omap <silent> F <Plug>fanfingtastic_F
+xmap <silent> F <Plug>fanfingtastic_F
+nmap <silent> F <Plug>fanfingtastic_F
+noremap H ^
+xnoremap <silent> <expr> I targets#e('I')
+onoremap <silent> Ila :call targets#o('alI', v:count1)
+onoremap <silent> Ina :call targets#o('anI', v:count1)
+onoremap <silent> Ia :call targets#o('acI', v:count1)
+onoremap <silent> IL$ :call targets#o('$LI', v:count1)
+onoremap <silent> IN$ :call targets#o('$NI', v:count1)
+onoremap <silent> Il$ :call targets#o('$lI', v:count1)
+onoremap <silent> In$ :call targets#o('$nI', v:count1)
+onoremap <silent> I$ :call targets#o('$cI', v:count1)
+onoremap <silent> IL& :call targets#o('&LI', v:count1)
+onoremap <silent> IN& :call targets#o('&NI', v:count1)
+onoremap <silent> Il& :call targets#o('&lI', v:count1)
+onoremap <silent> In& :call targets#o('&nI', v:count1)
+onoremap <silent> I& :call targets#o('&cI', v:count1)
+onoremap <silent> IL| :call targets#o('|LI', v:count1)
+onoremap <silent> IN| :call targets#o('|NI', v:count1)
+onoremap <silent> Il| :call targets#o('|lI', v:count1)
+onoremap <silent> In| :call targets#o('|nI', v:count1)
+onoremap <silent> I| :call targets#o('|cI', v:count1)
+onoremap <silent> IL\ :call targets#o('\LI', v:count1)
+onoremap <silent> IN\ :call targets#o('\NI', v:count1)
+onoremap <silent> Il\ :call targets#o('\lI', v:count1)
+onoremap <silent> In\ :call targets#o('\nI', v:count1)
+onoremap <silent> I\ :call targets#o('\cI', v:count1)
+onoremap <silent> IL/ :call targets#o('/LI', v:count1)
+onoremap <silent> IN/ :call targets#o('/NI', v:count1)
+onoremap <silent> Il/ :call targets#o('/lI', v:count1)
+onoremap <silent> In/ :call targets#o('/nI', v:count1)
+onoremap <silent> I/ :call targets#o('/cI', v:count1)
+onoremap <silent> IL# :call targets#o('#LI', v:count1)
+onoremap <silent> IN# :call targets#o('#NI', v:count1)
+onoremap <silent> Il# :call targets#o('#lI', v:count1)
+onoremap <silent> In# :call targets#o('#nI', v:count1)
+onoremap <silent> I# :call targets#o('#cI', v:count1)
+onoremap <silent> IL* :call targets#o('*LI', v:count1)
+onoremap <silent> IN* :call targets#o('*NI', v:count1)
+onoremap <silent> Il* :call targets#o('*lI', v:count1)
+onoremap <silent> In* :call targets#o('*nI', v:count1)
+onoremap <silent> I* :call targets#o('*cI', v:count1)
+onoremap <silent> IL_ :call targets#o('_LI', v:count1)
+onoremap <silent> IN_ :call targets#o('_NI', v:count1)
+onoremap <silent> Il_ :call targets#o('_lI', v:count1)
+onoremap <silent> In_ :call targets#o('_nI', v:count1)
+onoremap <silent> I_ :call targets#o('_cI', v:count1)
+onoremap <silent> IL~ :call targets#o('~LI', v:count1)
+onoremap <silent> IN~ :call targets#o('~NI', v:count1)
+onoremap <silent> Il~ :call targets#o('~lI', v:count1)
+onoremap <silent> In~ :call targets#o('~nI', v:count1)
+onoremap <silent> I~ :call targets#o('~cI', v:count1)
+onoremap <silent> IL= :call targets#o('=LI', v:count1)
+onoremap <silent> IN= :call targets#o('=NI', v:count1)
+onoremap <silent> Il= :call targets#o('=lI', v:count1)
+onoremap <silent> In= :call targets#o('=nI', v:count1)
+onoremap <silent> I= :call targets#o('=cI', v:count1)
+onoremap <silent> IL- :call targets#o('-LI', v:count1)
+onoremap <silent> IN- :call targets#o('-NI', v:count1)
+onoremap <silent> Il- :call targets#o('-lI', v:count1)
+onoremap <silent> In- :call targets#o('-nI', v:count1)
+onoremap <silent> I- :call targets#o('-cI', v:count1)
+onoremap <silent> IL+ :call targets#o('+LI', v:count1)
+onoremap <silent> IN+ :call targets#o('+NI', v:count1)
+onoremap <silent> Il+ :call targets#o('+lI', v:count1)
+onoremap <silent> In+ :call targets#o('+nI', v:count1)
+onoremap <silent> I+ :call targets#o('+cI', v:count1)
+onoremap <silent> IL: :call targets#o(':LI', v:count1)
+onoremap <silent> IN: :call targets#o(':NI', v:count1)
+onoremap <silent> Il: :call targets#o(':lI', v:count1)
+onoremap <silent> In: :call targets#o(':nI', v:count1)
+onoremap <silent> I: :call targets#o(':cI', v:count1)
+onoremap <silent> IL; :call targets#o(';LI', v:count1)
+onoremap <silent> IN; :call targets#o(';NI', v:count1)
+onoremap <silent> Il; :call targets#o(';lI', v:count1)
+onoremap <silent> In; :call targets#o(';nI', v:count1)
+onoremap <silent> I; :call targets#o(';cI', v:count1)
+onoremap <silent> IL. :call targets#o('.LI', v:count1)
+onoremap <silent> IN. :call targets#o('.NI', v:count1)
+onoremap <silent> Il. :call targets#o('.lI', v:count1)
+onoremap <silent> In. :call targets#o('.nI', v:count1)
+onoremap <silent> I. :call targets#o('.cI', v:count1)
+onoremap <silent> IL, :call targets#o(',LI', v:count1)
+onoremap <silent> IN, :call targets#o(',NI', v:count1)
+onoremap <silent> Il, :call targets#o(',lI', v:count1)
+onoremap <silent> In, :call targets#o(',nI', v:count1)
+onoremap <silent> I, :call targets#o(',cI', v:count1)
+onoremap <silent> IL` :call targets#o('`LI', v:count1)
+onoremap <silent> IN` :call targets#o('`NI', v:count1)
+onoremap <silent> Il` :call targets#o('`lI', v:count1)
+onoremap <silent> In` :call targets#o('`nI', v:count1)
+onoremap <silent> I` :call targets#o('`cI', v:count1)
+onoremap <silent> IL' :call targets#o('''LI', v:count1)
+onoremap <silent> IN' :call targets#o('''NI', v:count1)
+onoremap <silent> Il' :call targets#o('''lI', v:count1)
+onoremap <silent> In' :call targets#o('''nI', v:count1)
+onoremap <silent> I' :call targets#o('''cI', v:count1)
+onoremap <silent> IL" :call targets#o('"LI', v:count1)
+onoremap <silent> IN" :call targets#o('"NI', v:count1)
+onoremap <silent> Il" :call targets#o('"lI', v:count1)
+onoremap <silent> In" :call targets#o('"nI', v:count1)
+onoremap <silent> I" :call targets#o('"cI', v:count1)
+onoremap <silent> Ilt :call targets#o('tlI', v:count1)
+onoremap <silent> Int :call targets#o('tnI', v:count1)
+onoremap <silent> It :call targets#o('tcI', v:count1)
+onoremap <silent> Il> :call targets#o('>lI', v:count1)
+onoremap <silent> In> :call targets#o('>nI', v:count1)
+onoremap <silent> I> :call targets#o('>cI', v:count1)
+onoremap <silent> Il< :call targets#o('<lI', v:count1)
+onoremap <silent> In< :call targets#o('<nI', v:count1)
+onoremap <silent> I< :call targets#o('<cI', v:count1)
+onoremap <silent> Il] :call targets#o(']lI', v:count1)
+onoremap <silent> In] :call targets#o(']nI', v:count1)
+onoremap <silent> I] :call targets#o(']cI', v:count1)
+onoremap <silent> Il[ :call targets#o('[lI', v:count1)
+onoremap <silent> In[ :call targets#o('[nI', v:count1)
+onoremap <silent> I[ :call targets#o('[cI', v:count1)
+onoremap <silent> IlB :call targets#o('BlI', v:count1)
+onoremap <silent> InB :call targets#o('BnI', v:count1)
+onoremap <silent> IB :call targets#o('BcI', v:count1)
+onoremap <silent> Il} :call targets#o('}lI', v:count1)
+onoremap <silent> In} :call targets#o('}nI', v:count1)
+onoremap <silent> I} :call targets#o('}cI', v:count1)
+onoremap <silent> Il{ :call targets#o('{lI', v:count1)
+onoremap <silent> In{ :call targets#o('{nI', v:count1)
+onoremap <silent> I{ :call targets#o('{cI', v:count1)
+onoremap <silent> Ilb :call targets#o('blI', v:count1)
+onoremap <silent> Inb :call targets#o('bnI', v:count1)
+onoremap <silent> Ib :call targets#o('bcI', v:count1)
+onoremap <silent> Il) :call targets#o(')lI', v:count1)
+onoremap <silent> In) :call targets#o(')nI', v:count1)
+onoremap <silent> I) :call targets#o(')cI', v:count1)
+onoremap <silent> Il( :call targets#o('(lI', v:count1)
+onoremap <silent> In( :call targets#o('(nI', v:count1)
+onoremap <silent> I( :call targets#o('(cI', v:count1)
+noremap J 4j
+noremap K 4k
+noremap L $
+nnoremap N ?
+xmap S <Plug>VSurround
+omap <silent> T <Plug>fanfingtastic_T
+xmap <silent> T <Plug>fanfingtastic_T
+nmap <silent> T <Plug>fanfingtastic_T
+xnoremap <silent> <expr> a targets#e('a')
+onoremap <silent> ala :call targets#o('ala', v:count1)
+onoremap <silent> ana :call targets#o('ana', v:count1)
+onoremap <silent> aa :call targets#o('aca', v:count1)
+onoremap <silent> aL$ :call targets#o('$La', v:count1)
+onoremap <silent> aN$ :call targets#o('$Na', v:count1)
+onoremap <silent> al$ :call targets#o('$la', v:count1)
+onoremap <silent> an$ :call targets#o('$na', v:count1)
+onoremap <silent> a$ :call targets#o('$ca', v:count1)
+onoremap <silent> aL& :call targets#o('&La', v:count1)
+onoremap <silent> aN& :call targets#o('&Na', v:count1)
+onoremap <silent> al& :call targets#o('&la', v:count1)
+onoremap <silent> an& :call targets#o('&na', v:count1)
+onoremap <silent> a& :call targets#o('&ca', v:count1)
+onoremap <silent> aL| :call targets#o('|La', v:count1)
+onoremap <silent> aN| :call targets#o('|Na', v:count1)
+onoremap <silent> al| :call targets#o('|la', v:count1)
+onoremap <silent> an| :call targets#o('|na', v:count1)
+onoremap <silent> a| :call targets#o('|ca', v:count1)
+onoremap <silent> aL\ :call targets#o('\La', v:count1)
+onoremap <silent> aN\ :call targets#o('\Na', v:count1)
+onoremap <silent> al\ :call targets#o('\la', v:count1)
+onoremap <silent> an\ :call targets#o('\na', v:count1)
+onoremap <silent> a\ :call targets#o('\ca', v:count1)
+onoremap <silent> aL/ :call targets#o('/La', v:count1)
+onoremap <silent> aN/ :call targets#o('/Na', v:count1)
+onoremap <silent> al/ :call targets#o('/la', v:count1)
+onoremap <silent> an/ :call targets#o('/na', v:count1)
+onoremap <silent> a/ :call targets#o('/ca', v:count1)
+onoremap <silent> aL# :call targets#o('#La', v:count1)
+onoremap <silent> aN# :call targets#o('#Na', v:count1)
+onoremap <silent> al# :call targets#o('#la', v:count1)
+onoremap <silent> an# :call targets#o('#na', v:count1)
+onoremap <silent> a# :call targets#o('#ca', v:count1)
+onoremap <silent> aL* :call targets#o('*La', v:count1)
+onoremap <silent> aN* :call targets#o('*Na', v:count1)
+onoremap <silent> al* :call targets#o('*la', v:count1)
+onoremap <silent> an* :call targets#o('*na', v:count1)
+onoremap <silent> a* :call targets#o('*ca', v:count1)
+onoremap <silent> aL_ :call targets#o('_La', v:count1)
+onoremap <silent> aN_ :call targets#o('_Na', v:count1)
+onoremap <silent> al_ :call targets#o('_la', v:count1)
+onoremap <silent> an_ :call targets#o('_na', v:count1)
+onoremap <silent> a_ :call targets#o('_ca', v:count1)
+onoremap <silent> aL~ :call targets#o('~La', v:count1)
+onoremap <silent> aN~ :call targets#o('~Na', v:count1)
+onoremap <silent> al~ :call targets#o('~la', v:count1)
+onoremap <silent> an~ :call targets#o('~na', v:count1)
+onoremap <silent> a~ :call targets#o('~ca', v:count1)
+onoremap <silent> aL= :call targets#o('=La', v:count1)
+onoremap <silent> aN= :call targets#o('=Na', v:count1)
+onoremap <silent> al= :call targets#o('=la', v:count1)
+onoremap <silent> an= :call targets#o('=na', v:count1)
+onoremap <silent> a= :call targets#o('=ca', v:count1)
+onoremap <silent> aL- :call targets#o('-La', v:count1)
+onoremap <silent> aN- :call targets#o('-Na', v:count1)
+onoremap <silent> al- :call targets#o('-la', v:count1)
+onoremap <silent> an- :call targets#o('-na', v:count1)
+onoremap <silent> a- :call targets#o('-ca', v:count1)
+onoremap <silent> aL+ :call targets#o('+La', v:count1)
+onoremap <silent> aN+ :call targets#o('+Na', v:count1)
+onoremap <silent> al+ :call targets#o('+la', v:count1)
+onoremap <silent> an+ :call targets#o('+na', v:count1)
+onoremap <silent> a+ :call targets#o('+ca', v:count1)
+onoremap <silent> aL: :call targets#o(':La', v:count1)
+onoremap <silent> aN: :call targets#o(':Na', v:count1)
+onoremap <silent> al: :call targets#o(':la', v:count1)
+onoremap <silent> an: :call targets#o(':na', v:count1)
+onoremap <silent> a: :call targets#o(':ca', v:count1)
+onoremap <silent> aL; :call targets#o(';La', v:count1)
+onoremap <silent> aN; :call targets#o(';Na', v:count1)
+onoremap <silent> al; :call targets#o(';la', v:count1)
+onoremap <silent> an; :call targets#o(';na', v:count1)
+onoremap <silent> a; :call targets#o(';ca', v:count1)
+onoremap <silent> aL. :call targets#o('.La', v:count1)
+onoremap <silent> aN. :call targets#o('.Na', v:count1)
+onoremap <silent> al. :call targets#o('.la', v:count1)
+onoremap <silent> an. :call targets#o('.na', v:count1)
+onoremap <silent> a. :call targets#o('.ca', v:count1)
+onoremap <silent> aL, :call targets#o(',La', v:count1)
+onoremap <silent> aN, :call targets#o(',Na', v:count1)
+onoremap <silent> al, :call targets#o(',la', v:count1)
+onoremap <silent> an, :call targets#o(',na', v:count1)
+onoremap <silent> a, :call targets#o(',ca', v:count1)
+onoremap <silent> aL` :call targets#o('`La', v:count1)
+onoremap <silent> aN` :call targets#o('`Na', v:count1)
+onoremap <silent> al` :call targets#o('`la', v:count1)
+onoremap <silent> an` :call targets#o('`na', v:count1)
+onoremap <silent> a` :call targets#o('`ca', v:count1)
+onoremap <silent> aL' :call targets#o('''La', v:count1)
+onoremap <silent> aN' :call targets#o('''Na', v:count1)
+onoremap <silent> al' :call targets#o('''la', v:count1)
+onoremap <silent> an' :call targets#o('''na', v:count1)
+onoremap <silent> a' :call targets#o('''ca', v:count1)
+onoremap <silent> aL" :call targets#o('"La', v:count1)
+onoremap <silent> aN" :call targets#o('"Na', v:count1)
+onoremap <silent> al" :call targets#o('"la', v:count1)
+onoremap <silent> an" :call targets#o('"na', v:count1)
+onoremap <silent> a" :call targets#o('"ca', v:count1)
+onoremap <silent> alt :call targets#o('tla', v:count1)
+onoremap <silent> ant :call targets#o('tna', v:count1)
+onoremap <silent> at :call targets#o('tca', v:count1)
+onoremap <silent> al> :call targets#o('>la', v:count1)
+onoremap <silent> an> :call targets#o('>na', v:count1)
+onoremap <silent> a> :call targets#o('>ca', v:count1)
+onoremap <silent> al< :call targets#o('<la', v:count1)
+onoremap <silent> an< :call targets#o('<na', v:count1)
+onoremap <silent> a< :call targets#o('<ca', v:count1)
+onoremap <silent> al] :call targets#o(']la', v:count1)
+onoremap <silent> an] :call targets#o(']na', v:count1)
+onoremap <silent> a] :call targets#o(']ca', v:count1)
+onoremap <silent> al[ :call targets#o('[la', v:count1)
+onoremap <silent> an[ :call targets#o('[na', v:count1)
+onoremap <silent> a[ :call targets#o('[ca', v:count1)
+onoremap <silent> alB :call targets#o('Bla', v:count1)
+onoremap <silent> anB :call targets#o('Bna', v:count1)
+onoremap <silent> aB :call targets#o('Bca', v:count1)
+onoremap <silent> al} :call targets#o('}la', v:count1)
+onoremap <silent> an} :call targets#o('}na', v:count1)
+onoremap <silent> a} :call targets#o('}ca', v:count1)
+onoremap <silent> al{ :call targets#o('{la', v:count1)
+onoremap <silent> an{ :call targets#o('{na', v:count1)
+onoremap <silent> a{ :call targets#o('{ca', v:count1)
+onoremap <silent> alb :call targets#o('bla', v:count1)
+onoremap <silent> anb :call targets#o('bna', v:count1)
+onoremap <silent> ab :call targets#o('bca', v:count1)
+onoremap <silent> al) :call targets#o(')la', v:count1)
+onoremap <silent> an) :call targets#o(')na', v:count1)
+onoremap <silent> a) :call targets#o(')ca', v:count1)
+onoremap <silent> al( :call targets#o('(la', v:count1)
+onoremap <silent> an( :call targets#o('(na', v:count1)
+onoremap <silent> a( :call targets#o('(ca', v:count1)
+omap ae <Plug>(textobj-entire-a)
+xmap ae <Plug>(textobj-entire-a)
+omap acm <Plug>(textobj-comment-a)
+xmap acm <Plug>(textobj-comment-a)
+nmap cS <Plug>CSurround
+nmap cs <Plug>Csurround
+nmap cmu <Plug>Commentary<Plug>Commentary
+nmap cgc <Plug>ChangeCommentary
+nmap cmm <Plug>CommentaryLine
+omap cm <Plug>Commentary
+nmap cm <Plug>Commentary
+xmap cm <Plug>Commentary
+nmap ds <Plug>Dsurround
+omap <silent> f <Plug>fanfingtastic_f
+xmap <silent> f <Plug>fanfingtastic_f
+nmap <silent> f <Plug>fanfingtastic_f
+vmap gx <Plug>NetrwBrowseXVis
+nmap gx <Plug>NetrwBrowseX
+vmap <silent> gL <Plug>VLionLeft
+nmap <silent> gL <Plug>LionLeft
+vmap <silent> gl <Plug>VLionRight
+nmap <silent> gl <Plug>LionRight
+nmap gcu <Plug>Commentary<Plug>Commentary
+nmap gcc <Plug>CommentaryLine
+omap gc <Plug>Commentary
+nmap gc <Plug>Commentary
+xmap gc <Plug>Commentary
+xmap gS <Plug>VgSurround
+xnoremap <silent> <expr> i targets#e('i')
+onoremap <silent> ila :call targets#o('ali', v:count1)
+onoremap <silent> ina :call targets#o('ani', v:count1)
+onoremap <silent> ia :call targets#o('aci', v:count1)
+onoremap <silent> iL$ :call targets#o('$Li', v:count1)
+onoremap <silent> iN$ :call targets#o('$Ni', v:count1)
+onoremap <silent> il$ :call targets#o('$li', v:count1)
+onoremap <silent> in$ :call targets#o('$ni', v:count1)
+onoremap <silent> i$ :call targets#o('$ci', v:count1)
+onoremap <silent> iL& :call targets#o('&Li', v:count1)
+onoremap <silent> iN& :call targets#o('&Ni', v:count1)
+onoremap <silent> il& :call targets#o('&li', v:count1)
+onoremap <silent> in& :call targets#o('&ni', v:count1)
+onoremap <silent> i& :call targets#o('&ci', v:count1)
+onoremap <silent> iL| :call targets#o('|Li', v:count1)
+onoremap <silent> iN| :call targets#o('|Ni', v:count1)
+onoremap <silent> il| :call targets#o('|li', v:count1)
+onoremap <silent> in| :call targets#o('|ni', v:count1)
+onoremap <silent> i| :call targets#o('|ci', v:count1)
+onoremap <silent> iL\ :call targets#o('\Li', v:count1)
+onoremap <silent> iN\ :call targets#o('\Ni', v:count1)
+onoremap <silent> il\ :call targets#o('\li', v:count1)
+onoremap <silent> in\ :call targets#o('\ni', v:count1)
+onoremap <silent> i\ :call targets#o('\ci', v:count1)
+onoremap <silent> iL/ :call targets#o('/Li', v:count1)
+onoremap <silent> iN/ :call targets#o('/Ni', v:count1)
+onoremap <silent> il/ :call targets#o('/li', v:count1)
+onoremap <silent> in/ :call targets#o('/ni', v:count1)
+onoremap <silent> i/ :call targets#o('/ci', v:count1)
+onoremap <silent> iL# :call targets#o('#Li', v:count1)
+onoremap <silent> iN# :call targets#o('#Ni', v:count1)
+onoremap <silent> il# :call targets#o('#li', v:count1)
+onoremap <silent> in# :call targets#o('#ni', v:count1)
+onoremap <silent> i# :call targets#o('#ci', v:count1)
+onoremap <silent> iL* :call targets#o('*Li', v:count1)
+onoremap <silent> iN* :call targets#o('*Ni', v:count1)
+onoremap <silent> il* :call targets#o('*li', v:count1)
+onoremap <silent> in* :call targets#o('*ni', v:count1)
+onoremap <silent> i* :call targets#o('*ci', v:count1)
+onoremap <silent> iL_ :call targets#o('_Li', v:count1)
+onoremap <silent> iN_ :call targets#o('_Ni', v:count1)
+onoremap <silent> il_ :call targets#o('_li', v:count1)
+onoremap <silent> in_ :call targets#o('_ni', v:count1)
+onoremap <silent> i_ :call targets#o('_ci', v:count1)
+onoremap <silent> iL~ :call targets#o('~Li', v:count1)
+onoremap <silent> iN~ :call targets#o('~Ni', v:count1)
+onoremap <silent> il~ :call targets#o('~li', v:count1)
+onoremap <silent> in~ :call targets#o('~ni', v:count1)
+onoremap <silent> i~ :call targets#o('~ci', v:count1)
+onoremap <silent> iL= :call targets#o('=Li', v:count1)
+onoremap <silent> iN= :call targets#o('=Ni', v:count1)
+onoremap <silent> il= :call targets#o('=li', v:count1)
+onoremap <silent> in= :call targets#o('=ni', v:count1)
+onoremap <silent> i= :call targets#o('=ci', v:count1)
+onoremap <silent> iL- :call targets#o('-Li', v:count1)
+onoremap <silent> iN- :call targets#o('-Ni', v:count1)
+onoremap <silent> il- :call targets#o('-li', v:count1)
+onoremap <silent> in- :call targets#o('-ni', v:count1)
+onoremap <silent> i- :call targets#o('-ci', v:count1)
+onoremap <silent> iL+ :call targets#o('+Li', v:count1)
+onoremap <silent> iN+ :call targets#o('+Ni', v:count1)
+onoremap <silent> il+ :call targets#o('+li', v:count1)
+onoremap <silent> in+ :call targets#o('+ni', v:count1)
+onoremap <silent> i+ :call targets#o('+ci', v:count1)
+onoremap <silent> iL: :call targets#o(':Li', v:count1)
+onoremap <silent> iN: :call targets#o(':Ni', v:count1)
+onoremap <silent> il: :call targets#o(':li', v:count1)
+onoremap <silent> in: :call targets#o(':ni', v:count1)
+onoremap <silent> i: :call targets#o(':ci', v:count1)
+onoremap <silent> iL; :call targets#o(';Li', v:count1)
+onoremap <silent> iN; :call targets#o(';Ni', v:count1)
+onoremap <silent> il; :call targets#o(';li', v:count1)
+onoremap <silent> in; :call targets#o(';ni', v:count1)
+onoremap <silent> i; :call targets#o(';ci', v:count1)
+onoremap <silent> iL. :call targets#o('.Li', v:count1)
+onoremap <silent> iN. :call targets#o('.Ni', v:count1)
+onoremap <silent> il. :call targets#o('.li', v:count1)
+onoremap <silent> in. :call targets#o('.ni', v:count1)
+onoremap <silent> i. :call targets#o('.ci', v:count1)
+onoremap <silent> iL, :call targets#o(',Li', v:count1)
+onoremap <silent> iN, :call targets#o(',Ni', v:count1)
+onoremap <silent> il, :call targets#o(',li', v:count1)
+onoremap <silent> in, :call targets#o(',ni', v:count1)
+onoremap <silent> i, :call targets#o(',ci', v:count1)
+onoremap <silent> iL` :call targets#o('`Li', v:count1)
+onoremap <silent> iN` :call targets#o('`Ni', v:count1)
+onoremap <silent> il` :call targets#o('`li', v:count1)
+onoremap <silent> in` :call targets#o('`ni', v:count1)
+onoremap <silent> i` :call targets#o('`ci', v:count1)
+onoremap <silent> iL' :call targets#o('''Li', v:count1)
+onoremap <silent> iN' :call targets#o('''Ni', v:count1)
+onoremap <silent> il' :call targets#o('''li', v:count1)
+onoremap <silent> in' :call targets#o('''ni', v:count1)
+onoremap <silent> i' :call targets#o('''ci', v:count1)
+onoremap <silent> iL" :call targets#o('"Li', v:count1)
+onoremap <silent> iN" :call targets#o('"Ni', v:count1)
+onoremap <silent> il" :call targets#o('"li', v:count1)
+onoremap <silent> in" :call targets#o('"ni', v:count1)
+onoremap <silent> i" :call targets#o('"ci', v:count1)
+onoremap <silent> ilt :call targets#o('tli', v:count1)
+onoremap <silent> int :call targets#o('tni', v:count1)
+onoremap <silent> it :call targets#o('tci', v:count1)
+onoremap <silent> il> :call targets#o('>li', v:count1)
+onoremap <silent> in> :call targets#o('>ni', v:count1)
+onoremap <silent> i> :call targets#o('>ci', v:count1)
+onoremap <silent> il< :call targets#o('<li', v:count1)
+onoremap <silent> in< :call targets#o('<ni', v:count1)
+onoremap <silent> i< :call targets#o('<ci', v:count1)
+onoremap <silent> il] :call targets#o(']li', v:count1)
+onoremap <silent> in] :call targets#o(']ni', v:count1)
+onoremap <silent> i] :call targets#o(']ci', v:count1)
+onoremap <silent> il[ :call targets#o('[li', v:count1)
+onoremap <silent> in[ :call targets#o('[ni', v:count1)
+onoremap <silent> i[ :call targets#o('[ci', v:count1)
+onoremap <silent> ilB :call targets#o('Bli', v:count1)
+onoremap <silent> inB :call targets#o('Bni', v:count1)
+onoremap <silent> iB :call targets#o('Bci', v:count1)
+onoremap <silent> il} :call targets#o('}li', v:count1)
+onoremap <silent> in} :call targets#o('}ni', v:count1)
+onoremap <silent> i} :call targets#o('}ci', v:count1)
+onoremap <silent> il{ :call targets#o('{li', v:count1)
+onoremap <silent> in{ :call targets#o('{ni', v:count1)
+onoremap <silent> i{ :call targets#o('{ci', v:count1)
+onoremap <silent> ilb :call targets#o('bli', v:count1)
+onoremap <silent> inb :call targets#o('bni', v:count1)
+onoremap <silent> ib :call targets#o('bci', v:count1)
+onoremap <silent> il) :call targets#o(')li', v:count1)
+onoremap <silent> in) :call targets#o(')ni', v:count1)
+onoremap <silent> i) :call targets#o(')ci', v:count1)
+onoremap <silent> il( :call targets#o('(li', v:count1)
+onoremap <silent> in( :call targets#o('(ni', v:count1)
+onoremap <silent> i( :call targets#o('(ci', v:count1)
+omap ie <Plug>(textobj-entire-i)
+xmap ie <Plug>(textobj-entire-i)
+omap icm <Plug>(textobj-comment-a)
+xmap icm <Plug>(textobj-comment-a)
+noremap j gj
+noremap k gk
+noremap mm =
+nnoremap n /
+xnoremap o J
+vnoremap <silent> ss :call Swap(visualmode(), 1)
+nnoremap <silent> ss :set opfunc=Swapg@
+noremap s "_
+omap <silent> t <Plug>fanfingtastic_t
+xmap <silent> t <Plug>fanfingtastic_t
+nmap <silent> t <Plug>fanfingtastic_t
+xnoremap v 
+noremap x "_x
+nmap ySS <Plug>YSsurround
+nmap ySs <Plug>YSsurround
+nmap yss <Plug>Yssurround
+nmap yS <Plug>YSurround
+nmap ys <Plug>Ysurround
+onoremap <silent> <Plug>(textobj-python-class-n) :call g:__textobj_python.do_by_pattern("move-n","class","o")
+vnoremap <silent> <Plug>(textobj-python-class-n) :call g:__textobj_python.do_by_pattern("move-n","class","v")
+nnoremap <silent> <Plug>(textobj-python-class-n) :call g:__textobj_python.do_by_pattern("move-n","class","n")
+onoremap <silent> <Plug>(textobj-python-class-p) :call g:__textobj_python.do_by_pattern("move-p","class","o")
+vnoremap <silent> <Plug>(textobj-python-class-p) :call g:__textobj_python.do_by_pattern("move-p","class","v")
+nnoremap <silent> <Plug>(textobj-python-class-p) :call g:__textobj_python.do_by_pattern("move-p","class","n")
+onoremap <silent> <Plug>(textobj-python-class-i) :call g:__textobj_python.do_by_function("select-i","class","o")
+vnoremap <silent> <Plug>(textobj-python-class-i) :call g:__textobj_python.do_by_function("select-i","class","v")
+onoremap <silent> <Plug>(textobj-python-class-a) :call g:__textobj_python.do_by_function("select-a","class","o")
+vnoremap <silent> <Plug>(textobj-python-class-a) :call g:__textobj_python.do_by_function("select-a","class","v")
+onoremap <silent> <Plug>(textobj-python-function-n) :call g:__textobj_python.do_by_pattern("move-n","function","o")
+vnoremap <silent> <Plug>(textobj-python-function-n) :call g:__textobj_python.do_by_pattern("move-n","function","v")
+nnoremap <silent> <Plug>(textobj-python-function-n) :call g:__textobj_python.do_by_pattern("move-n","function","n")
+onoremap <silent> <Plug>(textobj-python-function-p) :call g:__textobj_python.do_by_pattern("move-p","function","o")
+vnoremap <silent> <Plug>(textobj-python-function-p) :call g:__textobj_python.do_by_pattern("move-p","function","v")
+nnoremap <silent> <Plug>(textobj-python-function-p) :call g:__textobj_python.do_by_pattern("move-p","function","n")
+onoremap <silent> <Plug>(textobj-python-function-i) :call g:__textobj_python.do_by_function("select-i","function","o")
+vnoremap <silent> <Plug>(textobj-python-function-i) :call g:__textobj_python.do_by_function("select-i","function","v")
+onoremap <silent> <Plug>(textobj-python-function-a) :call g:__textobj_python.do_by_function("select-a","function","o")
+vnoremap <silent> <Plug>(textobj-python-function-a) :call g:__textobj_python.do_by_function("select-a","function","v")
+vnoremap <silent> <Plug>NetrwBrowseXVis :call netrw#BrowseXVis()
+nnoremap <silent> <Plug>NetrwBrowseX :call netrw#BrowseX(expand((exists("g:netrw_gx")? g:netrw_gx : '<cfile>')),netrw#CheckIfRemote())
+nnoremap <silent> <Plug>LionRepeat .
+onoremap <silent> <Plug>(textobj-comment-i) :call g:__textobj_comment.do_by_function("select-i","-","o")
+vnoremap <silent> <Plug>(textobj-comment-i) :call g:__textobj_comment.do_by_function("select-i","-","v")
+onoremap <silent> <Plug>(textobj-comment-a) :call g:__textobj_comment.do_by_function("select-a","-","o")
+vnoremap <silent> <Plug>(textobj-comment-a) :call g:__textobj_comment.do_by_function("select-a","-","v")
+onoremap <silent> <Plug>(textobj-comment-big-a) :call g:__textobj_comment.do_by_function("select-a","big","o")
+vnoremap <silent> <Plug>(textobj-comment-big-a) :call g:__textobj_comment.do_by_function("select-a","big","v")
+onoremap <silent> <Plug>(textobj-entire-i) :call g:__textobj_entire.do_by_function("select-i","-","o")
+vnoremap <silent> <Plug>(textobj-entire-i) :call g:__textobj_entire.do_by_function("select-i","-","v")
+onoremap <silent> <Plug>(textobj-entire-a) :call g:__textobj_entire.do_by_function("select-a","-","o")
+vnoremap <silent> <Plug>(textobj-entire-a) :call g:__textobj_entire.do_by_function("select-a","-","v")
+nmap <silent> <Plug>CommentaryUndo <Plug>Commentary<Plug>Commentary
+nnoremap <silent> <Plug>SurroundRepeat .
+nnoremap <silent> <C-Down> -
+nnoremap <silent> <C-Up> +
+nnoremap <silent> <C-Left> <
+nnoremap <silent> <C-Right> >
+noremap <S-Tab> gT
+vmap <BS> "-d
+vmap <D-x> "*d
+vmap <D-c> "*y
+vmap <D-v> "-d"*P
+nmap <D-v> "*P
+cnoremap  
+imap S <Plug>ISurround
+imap s <Plug>Isurround
+imap  <Plug>Isurround
+inoremap JK 
+inoremap Jk 
+inoremap jK 
+inoremap jk 
+let &cpo=s:cpo_save
+unlet s:cpo_save
+set autoindent
+set background=dark
+set backspace=indent,eol,start
+set cryptmethod=blowfish
+set expandtab
+set fileencodings=ucs-bom,utf-8,default,latin1
+set helplang=en
+set ignorecase
+set incsearch
+set laststatus=2
+set operatorfunc=<SNR>24_go
+set ruler
+set runtimepath=~/.vim,~/.vim/bundle/vundle,~/.vim/bundle/vim-colors-solarized,~/.vim/bundle/vim-surround,~/.vim/bundle/vim-commentary,~/.vim/bundle/vim-indent-object,~/.vim/bundle/vim-textobj-user,~/.vim/bundle/vim-textobj-entire,~/.vim/bundle/vim-textobj-comment,~/.vim/bundle/targets.vim,~/.vim/bundle/vim-lion,~/.vim/bundle/swift.vim,~/.vim/bundle/vim-textobj-python,~/.vim/bundle/vim-over,~/.vim/bundle/vim-go,/usr/local/share/vim/vimfiles,/usr/local/share/vim/vim80,/usr/local/share/vim/vimfiles/after,~/.vim/after,~/.vim/vundle,~/.fzf/,~/.vim/bundle/vundle/after,~/.vim/bundle/vim-colors-solarized/after,~/.vim/bundle/vim-surround/after,~/.vim/bundle/vim-commentary/after,~/.vim/bundle/vim-indent-object/after,~/.vim/bundle/vim-textobj-user/after,~/.vim/bundle/vim-textobj-entire/after,~/.vim/bundle/vim-textobj-comment/after,~/.vim/bundle/targets.vim/after,~/.vim/bundle/vim-lion/after,~/.vim/bundle/swift.vim/after,~/.vim/bundle/vim-textobj-python/after,~/.vim/bundle/vim-over/after,~/.vim/bundle/vim-go/after
+set shiftwidth=4
+set smartcase
+set smarttab
+set softtabstop=4
+set splitright
+set noswapfile
+set tabline=%!MyTabLine()
+set wildignore=*.pyc
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+let v:this_session=expand("<sfile>:p")
+silent only
+cd ~/scrap
+if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
+  let s:wipebuf = bufnr('%')
+endif
+set shortmess=aoO
+badd +0 polyominoes.py
+badd +6 ~/notes/food-stamps-
+badd +0 ~/.vimrc
+argglobal
+silent! argdel *
+argadd polyominoes.py
+set stal=2
+edit polyominoes.py
+set splitbelow splitright
+set nosplitbelow
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:cpo_save=&cpo
+set cpo&vim
+omap <buffer> [pc <Plug>(textobj-python-class-p)
+xmap <buffer> [pc <Plug>(textobj-python-class-p)
+nmap <buffer> [pc <Plug>(textobj-python-class-p)
+omap <buffer> [pf <Plug>(textobj-python-function-p)
+xmap <buffer> [pf <Plug>(textobj-python-function-p)
+nmap <buffer> [pf <Plug>(textobj-python-function-p)
+omap <buffer> ]pc <Plug>(textobj-python-class-n)
+xmap <buffer> ]pc <Plug>(textobj-python-class-n)
+nmap <buffer> ]pc <Plug>(textobj-python-class-n)
+omap <buffer> ]pf <Plug>(textobj-python-function-n)
+xmap <buffer> ]pf <Plug>(textobj-python-function-n)
+nmap <buffer> ]pf <Plug>(textobj-python-function-n)
+omap <buffer> ac <Plug>(textobj-python-class-a)
+xmap <buffer> ac <Plug>(textobj-python-class-a)
+omap <buffer> af <Plug>(textobj-python-function-a)
+xmap <buffer> af <Plug>(textobj-python-function-a)
+omap <buffer> ic <Plug>(textobj-python-class-i)
+xmap <buffer> ic <Plug>(textobj-python-class-i)
+omap <buffer> if <Plug>(textobj-python-function-i)
+xmap <buffer> if <Plug>(textobj-python-function-i)
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal backupcopy=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=b:#,fb:-
+setlocal commentstring=#\ %s
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'python'
+setlocal filetype=python
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=0
+setlocal include=^\\s*\\(from\\|import\\)
+setlocal includeexpr=substitute(v:fname,'\\.','/','g')
+setlocal indentexpr=GetPythonIndent(v:lnum)
+setlocal indentkeys=0{,0},:,!^F,o,O,e,<:>,=elif,=except
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=pydoc
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=bin,octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=pythoncomplete#Complete
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal signcolumn=auto
+setlocal nosmartindent
+setlocal softtabstop=4
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=.py
+setlocal noswapfile
+setlocal synmaxcol=3000
+if &syntax != 'python'
+setlocal syntax=python
+endif
+setlocal tabstop=8
+setlocal tagcase=
+setlocal tags=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 19) / 39)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+tabedit ~/.vimrc
+set splitbelow splitright
+set nosplitbelow
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+vnoremap <buffer> <silent> [" :exe "normal! gv"|call search('\%(^\s*".*\n\)\%(^\s*"\)\@!', "bW")
+nnoremap <buffer> <silent> [" :call search('\%(^\s*".*\n\)\%(^\s*"\)\@!', "bW")
+vnoremap <buffer> <silent> [] m':exe "normal! gv"|call search('^\s*endf*\%[unction]\>', "bW")
+nnoremap <buffer> <silent> [] m':call search('^\s*endf*\%[unction]\>', "bW")
+vnoremap <buffer> <silent> [[ m':exe "normal! gv"|call search('^\s*fu\%[nction]\>', "bW")
+nnoremap <buffer> <silent> [[ m':call search('^\s*fu\%[nction]\>', "bW")
+vnoremap <buffer> <silent> ]" :exe "normal! gv"|call search('^\(\s*".*\n\)\@<!\(\s*"\)', "W")
+nnoremap <buffer> <silent> ]" :call search('^\(\s*".*\n\)\@<!\(\s*"\)', "W")
+vnoremap <buffer> <silent> ][ m':exe "normal! gv"|call search('^\s*endf*\%[unction]\>', "W")
+nnoremap <buffer> <silent> ][ m':call search('^\s*endf*\%[unction]\>', "W")
+vnoremap <buffer> <silent> ]] m':exe "normal! gv"|call search('^\s*fu\%[nction]\>', "W")
+nnoremap <buffer> <silent> ]] m':call search('^\s*fu\%[nction]\>', "W")
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal backupcopy=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=sO:\"\ -,mO:\"\ \ ,eO:\"\",:\"
+setlocal commentstring=\"%s
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'vim'
+setlocal filetype=vim
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=croql
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=0
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=GetVimIndent()
+setlocal indentkeys=0{,0},:,0#,!^F,o,O,e,=end,=else,=cat,=fina,=END,0\\
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255,#
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=bin,octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal signcolumn=auto
+setlocal nosmartindent
+setlocal softtabstop=4
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=
+setlocal noswapfile
+setlocal synmaxcol=3000
+if &syntax != 'vim'
+setlocal syntax=vim
+endif
+setlocal tabstop=8
+setlocal tagcase=
+setlocal tags=
+setlocal textwidth=78
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 40 - ((35 * winheight(0) + 19) / 38)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+40
+normal! 0
+tabnext 2
+set stal=1
+if exists('s:wipebuf')
+  silent exe 'bwipe ' . s:wipebuf
+endif
+unlet! s:wipebuf
+set winheight=1 winwidth=20 shortmess=filnxtToO
+let s:sx = expand("<sfile>:p:r")."x.vim"
+if file_readable(s:sx)
+  exe "source " . fnameescape(s:sx)
+endif
+let &so = s:so_save | let &siso = s:siso_save
+doautoall SessionLoadPost
+unlet SessionLoad
+" vim: set ft=vim :

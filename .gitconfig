@@ -1,0 +1,7 @@
+[user]
+	email = ethomas@box.com
+	name = Evan Thomas
+[merge]
+	tool = vimdiff
+[diff]
+	tool = vimdiff

@@ -1,13 +1,22 @@
+# vim stuff (swap files and such)
 --ignore-file=match:swp
 --ignore-file=match:swo
 --ignore-file=match:swn
+
+# C stuff (haven't worked in C forever)
 --ignore-file=match:asm
 --ignore-file=match:sym
---ignore-file=match:tags
---ignore-file=match:blockly-all.js
+--ignore-file=match:tags  # Ctags
+
+# python stuff
+--ignore-file=match:.coverage
+--ignore-dir=venv
+
+# go stuff
+--ignore-dir=vendor
+
+# other
 --ignore-file=match:.gitignore
 --ignore-dir=.git
---ignore-dir=appengine/build/war
---ignore-dir=Threes-HTML
 --ignore-dir=dist
---ignore-dir=.cabal-sandbox
+--ignore-dir=assets

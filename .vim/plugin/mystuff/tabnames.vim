@@ -16,7 +16,7 @@ if exists("+showtabline")
       let wn = tabpagewinnr(i,'$')
 
       let s .= '%#TabNum#'
-      let s .= i
+      let s .= (i - 1)
       " let s .= '%*'
       let s .= (i == t ? '%#TabLineSel#' : '%#TabLine#')
       let bufnr = buflist[winnr - 1]

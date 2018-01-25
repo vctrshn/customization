@@ -1,9 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/evan/Desktop/buildrump.sh/rumpctrl/src-netbsd/bin/ls'
-let g:netrw_dirhist_2='/home/evan/Desktop/buildrump.sh/rumpctrl/rumpobj/bin/ls'
-let g:netrw_dirhist_3='/home/evan/.stuff'
-let g:netrw_dirhist_4='/home/evan/notes'
-let g:netrw_dirhist_5='/home/evan/notes/memorization'
-let g:netrw_dirhist_6='/home/evan/notes'
-let g:netrw_dirhist_7='/home/evan/scripts'

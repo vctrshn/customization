@@ -1,0 +1,13 @@
+#!/bin/bash
+set -e
+remote=$(git remote | head -1)
+default_branch=$(
+  git branch -r --points-at refs/remotes/$remote/HEAD | head -1 |
+  awk '{print $3}' | awk -F'/' '{print $2'})
+_repo_url=$(git remote -vv | head -1 | awk '{print $2}')
+repo=$(basename $_repo_url)
+current_branch=$(git rev-parse --abbrev-ref HEAD)
+
+
+# git push --receive-pack="git receive-pack " ssh://ethomas@scm.dev.box.net:29418/devtools HEAD:refs/for/dev/new-branch
+git push --receive-pack="git receive-pack" ssh://ethomas@scm.dev.box.net:29418/$repo HEAD:refs/for/$default_branch/$current_branch
