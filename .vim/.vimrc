@@ -179,3 +179,5 @@ let g:go_def_mode = 'godef'
 set cryptmethod=blowfish
 
 set ruler
+
+let b:lion_squeeze_spaces = 1
