@@ -1,0 +1,5 @@
+#!/bin/bash
+prnum=$1
+current_repo=$(git remote get-url origin | awk -F: '{print $2}' | sed "s/.git//")
+repo=${2:-$current_repo}
+curl -H "Authorization: token $GHTOKEN" https://git.dev.box.net/api/v3/repos/$repo/issues/:number/assignees --data '{"assignees": ["MergeQ"]}'
