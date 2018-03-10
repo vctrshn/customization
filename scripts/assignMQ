@@ -1,5 +1,15 @@
 #!/bin/bash
-prnum=$1
-current_repo=$(git remote get-url origin | awk -F: '{print $2}' | sed "s/.git//")
-repo=${2:-$current_repo}
-curl -H "Authorization: token $GHTOKEN" https://git.dev.box.net/api/v3/repos/$repo/issues/:number/assignees --data '{"assignees": ["MergeQ"]}'
+set -euo pipefail
+
+RED='\033[0;31m'
+NC='\033[0m'
+repo=$(git remote get-url origin | awk -F: '{print $2}' | sed "s/.git//")
+branch=$(git rev-parse --abbrev-ref HEAD)
+output=$(curl -s -H "Authorization: token $GHTOKEN" https://git.dev.box.net/api/v3/repos/$repo/pulls | jq ".[] | select(.head.ref==\"$branch\") | .number")
+prnum=$(curl -s -H "Authorization: token $GHTOKEN" https://git.dev.box.net/api/v3/repos/$repo/pulls | jq ".[] | select(.head.ref==\"$branch\") | .number")
+if  [ -z $prnum ]; then
+  echo -e "${RED}Could not find pull request for $repo::$branch ${NC}"
+  exit 1
+fi
+
+curl -s -H "Authorization: token $GHTOKEN" https://git.dev.box.net/api/v3/repos/$repo/issues/$prnum/assignees --data '{"assignees": ["MergeQ"]}'

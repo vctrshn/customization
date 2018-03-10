@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 current_repo=$(git remote get-url origin | awk -F: '{print $2}' | sed "s/.git//")
 repo=${1:-$current_repo}
 curl -s -L -H "Accept: application/vnd.github.v3+json" -H "Authorization: Token $GHTOKEN" https://git.dev.box.net/api/v3/repos/$repo/events?per_page=50

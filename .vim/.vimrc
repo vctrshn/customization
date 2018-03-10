@@ -67,6 +67,10 @@ set nu
 set rnu
 
 
+" Stop vim from inserting two periods after formatting something with gq
+" https://stackoverflow.com/questions/4760428/how-can-i-make-vims-j-and-gq-commands-use-one-space-after-a-period
+set nojoinspaces
+
 syntax enable
 let g:solarized_termtrans = 1
 let g:solarized_bold = 1

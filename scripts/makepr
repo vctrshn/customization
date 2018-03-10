@@ -1,5 +1,6 @@
 #!/bin/bash
 
+set -euo pipefail
 branch=$(git rev-parse --abbrev-ref HEAD)
 repo_full_name=$(git remote get-url origin | awk -F: '{print $2}' | sed "s/.git//")
 

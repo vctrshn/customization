@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -euo pipefail
 remote=$(git remote | head -1)
 default_branch=$(
   git branch -r --points-at refs/remotes/$remote/HEAD | head -1 |

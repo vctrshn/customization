@@ -1,12 +1,17 @@
 #!/bin/bash
+
+set -euo pipefail
+
 state=$1
-sha=${2:-git rev-parse HEAD}
-context=${3:-Context}
+sha=${2:-$(git rev-parse HEAD)}
+context=${3:-"Rosie test"}
 repo_full_name=$(git remote get-url origin | awk -F: '{print $2}' | sed "s/.git//")
 
 curl -s -L -X POST -H "Accept: application/vnd.github.v3+json" -H "Authorization: Token $GHTOKEN" --data "{
 \"state\": \"$state\",
 \"description\": \"some description\",
+
+
 \"context\": \"$context\"
 }" https://git.dev.box.net/api/v3/repos/$repo_full_name/statuses/$sha
 
