@@ -184,4 +184,8 @@ set cryptmethod=blowfish
 
 set ruler
 
-let b:lion_squeeze_spaces = 1
+let g:lion_create_maps = 1
+let g:lion_squeeze_spaces = 1
+
+" function! FoldAll()
+" command! -nargs=? FoldAll call ExecuteScript(<f-args>)
