@@ -24,6 +24,8 @@ call vundle#begin()
 "Other
 Plugin 'gmarik/vundle'
 Plugin 'https://github.com/altercation/vim-colors-solarized'
+Plugin 'https://github.com/martinda/Jenkinsfile-vim-syntax'
+Plugin 'https://github.com/google/vim-jsonnet'
 
 "Language IDE-like stuff
 Plugin 'fatih/vim-go'
@@ -186,6 +188,16 @@ set ruler
 
 let g:lion_create_maps = 1
 let g:lion_squeeze_spaces = 1
+let g:jsonnet_fmt_on_save = 0
 
-" function! FoldAll()
-" command! -nargs=? FoldAll call ExecuteScript(<f-args>)
+function! TmuxRun()
+    let [lnum1, col1] = getpos("'<")[1:2]
+    let [lnum2, col2] = getpos("'>")[1:2]
+    let lines = getline(lnum1, lnum2)
+    let lines[-1] = lines[-1][: col2 - 1]
+    let lines[0] = lines[0][col1 - 1:]
+    let output = join(lines, "\n")
+    let cmd =  "r !tmux send-keys -t right \"" . output . "\" Enter"
+    execute cmd
+endfunction
+xnoremap <leader>r :call TmuxRun()<CR>

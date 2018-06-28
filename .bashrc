@@ -37,3 +37,18 @@ alias dwerk='/Users/ethomas/werk/venv/bin/python /Users/ethomas/werk/werk/main.p
 if [ -z "$TMUX" ]; then
   tmux
 fi
+
+
+# from casey
+if [[ "$(whoami)" == "ethomas" ]] && ! ps -U "ethomas" -o pid,ucomm | grep -v grep | grep -q "ssh-agent"; then
+    eval "$(ssh-agent)"
+    ssh-add > /dev/null 2>&1
+fi
+# set -x
+# docker-machine start
+# eval $(docker-machine env)
+# set +x
+# PS1="\[$(tput bold)\h:\W\$\[\e[0m\] "
+
+alias stop_work='sudo launchctl unload /Library/LaunchDaemons/com.opendns.osx.RoamingClientConfigUpdater.plist'
+alias start_work='sudo launchctl load /Library/LaunchDaemons/com.opendns.osx.RoamingClientConfigUpdater.plist'
