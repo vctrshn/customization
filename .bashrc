@@ -12,6 +12,7 @@ PATH="${PATH}:/Users/ethomas/scripts/cancel-cr-build"
 PATH="${PATH}:/Users/ethomas/go/bin"
 PATH="${PATH}:/Users/ethomas/.local/bin"
 PATH="${PATH}:/usr/local/sbin"
+PATH="${PATH}:/Users/ethomas/git.dev.box.net/ethomas/pe-oncall-tools"
 
 
 export PATH
@@ -31,8 +32,8 @@ source ~/.customization/secrets
 export GOPATH=/Users/ethomas/go
 
 alias nose='nosetests -v -x -s'
-export PYTHONPATH=$PYTHONPATH:/Users/ethomas/werk
-alias dwerk='/Users/ethomas/werk/venv/bin/python /Users/ethomas/werk/werk/main.py'
+export PYTHONPATH=$PYTHONPATH:/Users/ethomas/git.dev.box.net/Productivity/werk
+alias dwerk='/Users/ethomas/git.dev.box.net/Productivity/werk/venv/bin/python /Users/ethomas/git.dev.box.net/Productivity/werk/werk/main.py'
 
 if [ -z "$TMUX" ]; then
   tmux
@@ -44,11 +45,14 @@ if [[ "$(whoami)" == "ethomas" ]] && ! ps -U "ethomas" -o pid,ucomm | grep -v gr
     eval "$(ssh-agent)"
     ssh-add > /dev/null 2>&1
 fi
-# set -x
+
+# kube commands
+# deployment-config scripts/kube-up.sh
 # docker-machine start
 # eval $(docker-machine env)
-# set +x
-# PS1="\[$(tput bold)\h:\W\$\[\e[0m\] "
 
 alias stop_work='sudo launchctl unload /Library/LaunchDaemons/com.opendns.osx.RoamingClientConfigUpdater.plist'
 alias start_work='sudo launchctl load /Library/LaunchDaemons/com.opendns.osx.RoamingClientConfigUpdater.plist'
+alias dms='docker-machine start secondary'
+alias dme='eval $(docker-machine env secondary)'
+export JENKINS_URL=https://jenkins.pod.box.net
