@@ -16,7 +16,7 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 
-set rtp+=~/.vim/bundle/vundle
+set rtp+=~/.vim/bundle/Vundle.vim
 set rtp+=~/.fzf
 set rtp+=~/.vim/bundle/vim-colors-solarized
 call vundle#begin()
