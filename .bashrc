@@ -10,24 +10,30 @@ export HISTCONTROL=ignoredups:ignorespace
 export TERM=xterm-256color
 export PYENV_ROOT="$HOME/.pyenv"
 export PGDATA="/usr/local/var/postgres"
-export GOPATH=/Users/ethomas/go
+export GOPATH=/home/evan/go
 export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
 
 
 #  ============================== PATH CHANGES ==============================
 PATH="$PYENV_ROOT/bin:${PATH}"
-PATH="${PATH}:/Users/ethomas/scripts:/Users/ethomas/bin" # mostly for ack
-PATH="${PATH}:/Users/ethomas/go/bin"
-PATH="${PATH}:/Users/ethomas/.local/bin" # for haskell stuff
+PATH="${PATH}:/home/evan/scripts" # mostly for ack
+PATH="${PATH}:/home/evan/bin" # mostly for ack
+PATH="${PATH}:/home/evan/go/bin"
+PATH="${PATH}:/home/evan/.local/bin" # for haskell stuff
 PATH="${PATH}:/usr/local/sbin"
 export PATH
 
 
 #  ================================= ALIASES =================================
-alias lifx='/Users/ethomas/.customization/scripts/lifx-cmd/venv/bin/python /Users/ethomas/.customization/scripts/lifx-cmd/bin/lifx'
-alias lifx-discover='/Users/ethomas/.customization/scripts/lifx-cmd/venv/bin/python /Users/ethomas/.customization/scripts/lifx-cmd/bin/lifx-discover'
+alias lifx='/home/evan/.customization/scripts/lifx-cmd/venv/bin/python /home/evan/.customization/scripts/lifx-cmd/bin/lifx'
+alias lifx-discover='/home/evan/.customization/scripts/lifx-cmd/venv/bin/python /home/evan/.customization/scripts/lifx-cmd/bin/lifx-discover'
 alias ls='ls -G'
 alias nose='nosetests -v -x -s'
+alias de='docker-compose exec'
+alias dc='docker-compose'
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
+
 
 
 #  ================================= OTHER =================================
