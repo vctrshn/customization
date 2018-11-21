@@ -27,7 +27,7 @@ export PATH
 #  ================================= ALIASES =================================
 alias lifx='/home/evan/.customization/scripts/lifx-cmd/venv/bin/python /home/evan/.customization/scripts/lifx-cmd/bin/lifx'
 alias lifx-discover='/home/evan/.customization/scripts/lifx-cmd/venv/bin/python /home/evan/.customization/scripts/lifx-cmd/bin/lifx-discover'
-alias ls='ls -G'
+alias ls='ls --color=auto'
 alias nose='nosetests -v -x -s'
 alias de='docker-compose exec'
 alias dc='docker-compose'
@@ -47,3 +47,6 @@ if [[ "$(whoami)" == "ethomas" ]] && ! ps -U "ethomas" -o pid,ucomm | grep -v gr
     eval "$(ssh-agent)"
     ssh-add > /dev/null 2>&1
 fi
+
+# See http://linux-sxs.org/housekeeping/lscolors.html and https://github.com/seebi/dircolors-solarized
+eval `dircolors ~/.customization/dircolors-solarized/dircolors.256dark`

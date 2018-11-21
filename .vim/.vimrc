@@ -24,8 +24,6 @@ call vundle#begin()
 "Other
 Plugin 'gmarik/vundle'
 Plugin 'https://github.com/altercation/vim-colors-solarized'
-Plugin 'https://github.com/martinda/Jenkinsfile-vim-syntax'
-Plugin 'https://github.com/google/vim-jsonnet'
 
 "Language IDE-like stuff
 Plugin 'fatih/vim-go'
@@ -66,7 +64,7 @@ colorscheme ron
 
 " Turn on line numbering. Turn it on and of with set number and set number!
 set nu
-set rnu
+" set rnu
 
 
 " Stop vim from inserting two periods after formatting something with gq
@@ -197,7 +195,8 @@ function! TmuxRun()
     let lines[-1] = lines[-1][: col2 - 1]
     let lines[0] = lines[0][col1 - 1:]
     let output = join(lines, "\n")
-    let cmd =  "r !tmux send-keys -t right \"" . output . "\" Enter"
+    " TODO: also substitute all instances of $
+    let cmd =  "r !tmux send-keys -t right \"" . substitute(output, '"', '\\"', "g") . "\" Enter"
     execute cmd
 endfunction
 xnoremap <leader>r :call TmuxRun()<CR>

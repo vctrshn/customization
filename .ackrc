@@ -15,6 +15,10 @@
 # go stuff
 --ignore-dir=vendor
 
+# js stuff
+--ignore-file=match:.json
+--ignore-dir=bundles
+
 # other
 --ignore-file=match:.gitignore
 --ignore-dir=.git
