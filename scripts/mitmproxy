@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# See docs or docker container for examples
+# docs:             https://docs.mitmproxy.org/stable/
+# docker container: https://hub.docker.com/r/mitmproxy/mitmproxy/
+# Example
+#     export http_proxy=http://localhost:8080/
+#     export https_proxy=http://localhost:8080/
+#     export CURL_CA_BUNDLE=~/.mitmproxy/mitmproxy-ca-cert.cer  # For curl
+#     export SSL_CERT_FILE=~/.mitmproxy/mitmproxy-ca-cert.cer   # For go
+#     curl --data '{foo: "bar"}' https://example.com/
+
+# The following will make libcurl look for the mitmproxy's cert without the
+# CURL_CA_BUNDLE env variable. It's not very useful, bc even though libcurl
+# will find the cert it still won't trust it bc it's self signed. It's also
+# probably much less safe than forcing the user to explicitly set
+# CURL_CA_BUNDLE. You don't want the user to forget about this lingering
+# trusted cert. Regardless, I spent a lot of time figuring this out so here it
+# is.
+#    $ mkdir -p /usr/share/ca-certificates/extra/
+#    $ openssl x509 -in ~/.mitmproxy/mitmproxy-ca-cert.pem -inform PEM -out /usr/share/ca-certificates/extra/mitmproxy.crt
+
+docker run --rm -it -v ~/.mitmproxy:/home/mitmproxy/.mitmproxy -p 8080:8080 mitmproxy/mitmproxy
