@@ -20,4 +20,4 @@
 #    $ mkdir -p /usr/share/ca-certificates/extra/
 #    $ openssl x509 -in ~/.mitmproxy/mitmproxy-ca-cert.pem -inform PEM -out /usr/share/ca-certificates/extra/mitmproxy.crt
 
-docker run --rm -it -v ~/.mitmproxy:/home/mitmproxy/.mitmproxy -p 8080:8080 mitmproxy/mitmproxy
+docker run --rm -it -v ~/.mitmproxy:/home/mitmproxy/.mitmproxy --network=host -p 8080:8080 mitmproxy/mitmproxy mitmproxy "$@"
