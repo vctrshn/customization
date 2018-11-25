@@ -16,7 +16,8 @@ export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu
 
 #  ============================== PATH CHANGES ==============================
 PATH="$PYENV_ROOT/bin:${PATH}"
-PATH="${PATH}:/Users/ethomas/scripts:/Users/ethomas/bin" # mostly for ack
+PATH="${PATH}:/Users/ethomas/scripts"
+PATH="${PATH}:/Users/ethomas/bin" # mostly for ack
 PATH="${PATH}:/Users/ethomas/go/bin"
 PATH="${PATH}:/Users/ethomas/.local/bin" # for haskell stuff
 PATH="${PATH}:/usr/local/sbin"

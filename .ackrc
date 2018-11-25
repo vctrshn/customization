@@ -15,8 +15,17 @@
 # go stuff
 --ignore-dir=vendor
 
+# js stuff
+--ignore-file=match:.json
+--ignore-dir=bundles
+
 # other
 --ignore-file=match:.gitignore
 --ignore-dir=.git
 --ignore-dir=dist
 --ignore-dir=assets
+
+# Redefine js to include jsx, tsx and ts
+--type-set=js:ext:js,jsx,tsx,ts
+
+--type-add=ts:ext:ts # Idk if this is useful
