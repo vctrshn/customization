@@ -66,7 +66,7 @@ colorscheme ron
 
 " Turn on line numbering. Turn it on and of with set number and set number!
 set nu
-set rnu
+" set rnu
 
 
 " Stop vim from inserting two periods after formatting something with gq
@@ -172,7 +172,6 @@ nmap cmm <Plug>CommentaryLine
 nmap cgc <Plug>ChangeCommentary
 nmap cmu <Plug>Commentary<Plug>Commentary
 
-command! -nargs=0 Build :w | !python main.py
 nnoremap ; :
 
 nnoremap <C-p> :FZF<CR>

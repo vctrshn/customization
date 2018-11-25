@@ -1,4 +1,0 @@
-#!/bin/bash
-set -euo pipefail
-remote=$(git remote | head -1)
-git push $remote HEAD:refs/merge-queue/$(git rev-parse HEAD)

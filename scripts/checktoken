@@ -1,5 +1,0 @@
-#!/bin/bash
-set -euo pipefail
-token=$1
-# curl -H "Authorization: token $token" https://git.dev.box.net/api/v3/user | jq '.login'
-curl -H "Authorization: token $token" https://git.dev.box.net/api/v3/user | jq '.login'

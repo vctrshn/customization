@@ -1,9 +1,0 @@
-#!/bin/bash
-set -euo pipefail
-
-repo=$1
-commit=$2
-
-curl -s -L -H "Accept: application/vnd.github.v3+json" -H "Authorization: Token $GHTOKEN"  https://git.dev.box.net/api/v3/repos/$repo/commits/$commit
-echo
-

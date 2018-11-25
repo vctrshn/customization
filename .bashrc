@@ -20,6 +20,7 @@ PATH="${PATH}:/Users/ethomas/scripts:/Users/ethomas/bin" # mostly for ack
 PATH="${PATH}:/Users/ethomas/go/bin"
 PATH="${PATH}:/Users/ethomas/.local/bin" # for haskell stuff
 PATH="${PATH}:/usr/local/sbin"
+PATH="${PATH}:/Users/ethomas/Library/Python/2.7/bin" # pip/virtualenv location
 export PATH
 
 
@@ -28,6 +29,9 @@ alias lifx='/Users/ethomas/.customization/scripts/lifx-cmd/venv/bin/python /User
 alias lifx-discover='/Users/ethomas/.customization/scripts/lifx-cmd/venv/bin/python /Users/ethomas/.customization/scripts/lifx-cmd/bin/lifx-discover'
 alias ls='ls -G'
 alias nose='nosetests -v -x -s'
+alias godevel='/Users/ethomas/go/src/github.com/golang/go/bin/go'
+alias godvl='/Users/ethomas/go/src/github.com/golang/go/bin/go'
+alias gdvl='/Users/ethomas/go/src/github.com/golang/go/bin/go'
 
 
 #  ================================= OTHER =================================
