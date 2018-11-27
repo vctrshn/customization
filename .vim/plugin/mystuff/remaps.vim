@@ -33,13 +33,3 @@ noremap x "_x
 "multiple times
 noremap <Leader>l ^@qj^
 noremap <Leader>a @q
-
-
-"ctags stuffs
-"map <Leader>j :rightb vsp <CR>:exec("tag ".expand("<cword>"))<CR>
-"nmap <Leader>h :sp <CR>:exec("tag ".expand("<cword>"))<CR>
-"nmap <Leader>s :exec("ts ".expand("<cword>"))<CR>
-"nmap <Leader>] <C-]>
-
-ca genCtags !ctags `find .`<CR>
-ca csh  ConqueTerm bash <CR>

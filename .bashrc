@@ -29,7 +29,6 @@ alias lifx='/home/evan/.customization/scripts/lifx-cmd/venv/bin/python /home/eva
 alias lifx-discover='/home/evan/.customization/scripts/lifx-cmd/venv/bin/python /home/evan/.customization/scripts/lifx-cmd/bin/lifx-discover'
 alias ls='ls --color=auto'
 alias nose='nosetests -v -x -s'
-alias de='docker-compose exec'
 alias dc='docker-compose'
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'

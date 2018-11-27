@@ -170,7 +170,6 @@ nmap cmm <Plug>CommentaryLine
 nmap cgc <Plug>ChangeCommentary
 nmap cmu <Plug>Commentary<Plug>Commentary
 
-command! -nargs=0 Build :w | !python main.py
 nnoremap ; :
 
 nnoremap <C-p> :FZF<CR>
