@@ -32,7 +32,7 @@ alias nose='nosetests -v -x -s'
 alias dc='docker-compose'
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
-
+alias g='git'
 
 
 #  ================================= OTHER =================================

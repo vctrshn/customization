@@ -30,4 +30,7 @@
 --type-set=js:ext:js,jsx,tsx,ts
 --type-set=jsx:ext:js,jsx,tsx,ts
 
+# Redefine css to include scss
+--type-set=css:ext:css,scss
+
 --type-add=ts:ext:ts # Idk if this is useful
