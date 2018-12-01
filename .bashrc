@@ -21,6 +21,7 @@ PATH="${PATH}:/home/evan/bin" # mostly for ack
 PATH="${PATH}:/home/evan/go/bin"
 PATH="${PATH}:/home/evan/.local/bin" # for haskell stuff
 PATH="${PATH}:/usr/local/sbin"
+PATH="${PATH}:~/.config/yarn/global/node_modules/.bin/" # for yarn binaries, ie prettier
 export PATH
 
 
