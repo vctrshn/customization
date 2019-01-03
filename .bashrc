@@ -34,6 +34,8 @@ alias dc='docker-compose'
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 alias g='git'
+# bind -x '"\C-i": clear; ls'
+bind -x '"\C-i": clear'
 
 
 #  ================================= OTHER =================================

@@ -25,6 +25,8 @@
 --ignore-dir=.git
 --ignore-dir=dist
 --ignore-dir=assets
+--ignore-file=match:tags
+--ignore-file=match:ipynb
 
 # Redefine js to include jsx, tsx and ts
 --type-set=js:ext:js,jsx,tsx,ts
