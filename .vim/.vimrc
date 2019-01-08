@@ -27,6 +27,7 @@ Plugin 'gmarik/vundle'
 Plugin 'fatih/vim-go'
 Plugin 'bitc/vim-hdevtools'
 Plugin 'https://github.com/dan-t/vim-hsimport'
+Plugin 'https://github.com/junegunn/fzf.vim'
 " consider https://github.com/romainl/ctags-patterns-for-javascript
 
 " Coloring/syntax highlighting
@@ -211,7 +212,7 @@ endfunction
 xnoremap <leader>r :call TmuxRun()<CR>
 
 " Adapted from https://stackoverflow.com/questions/2974192/how-can-i-pare-down-vims-buffer-list-to-only-include-active-buffers
-command! -nargs=* BufClean call CloseHiddenBuffers()
+command! -nargs=* CleanBuf call CloseHiddenBuffers()
 function! CloseHiddenBuffers()
   " figure out which buffers are visible in any tab
   let visible = {}
