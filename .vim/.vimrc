@@ -48,9 +48,6 @@ Plugin 'https://github.com/glts/vim-textobj-comment'
 Plugin 'https://github.com/wellle/targets.vim'
 Plugin 'https://github.com/coderifous/textobj-word-column.vim'
 
-" Other
-Plugin 'https://github.com/christoomey/vim-tmux-navigator'
-
 call vundle#end()
 
 filetype plugin indent on    " required
