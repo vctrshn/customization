@@ -37,6 +37,18 @@ alias pbpaste='xclip -selection clipboard -o'
 alias g='git'
 
 
+#  ================================= FZF =================================
+export FZF_DEFAULT_OPTS='
+  -m -i
+  --bind ctrl-d:page-down,ctrl-u:page-up
+  --preview "[[ $(file --mime {}) =~ binary ]] &&
+                 echo {} is a binary file ||
+                 (bat --style "numbers,changes" --color=always {} ||
+                  head -500 {}) 2> /dev/null"
+  --preview-window right:35%
+'
+
+
 #  ================================= OTHER =================================
 if [ -z "$TMUX" ]; then
   tmux

@@ -228,3 +228,22 @@ function! CloseHiddenBuffers()
   endfor
   echon "Deleted " . l:tally . " buffers"
 endfun
+
+" FZF Config
+function! s:build_quickfix_list(lines)
+  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+  copen
+  cc
+endfunction
+let g:fzf_action = {
+  \ 'ctrl-q': function('s:build_quickfix_list'),
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+let g:fzf_layout = {'down': '45%'}
+command! -bang -nargs=* Ag
+  \ call fzf#vim#ag(<q-args>, fzf#vim#with_preview('right:35%'))
+" Immediately trigger a search for the current keyword if there is one
+nnoremap <expr> <leader>g (expand("<cword>") ==? "") ? ":Ag " : ":Ag \<C-r>\<C-w><CR>"
+" Immediately trigger a search for the current selection if there is one
+xnoremap <leader>g "zy:exe "Ag ".@z.""<CR>
